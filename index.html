@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Los Angeles Geography Quiz</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SELECTION SCREEN -->
+  <div id="selection-screen">
+    <header>
+      <h1>Los Angeles Geography Quiz</h1>
+      <p>Select a region to test your knowledge of its neighborhoods and cities:</p>
+    </header>
+    <div id="region-cards-container" class="cards-grid"></div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="game-screen" class="hidden">
+    <div id="top-bar">
+      <button id="back-btn" class="nav-btn">&larr; Change Region</button>
+      <h2 id="region-title">Region Quiz</h2>
+      <div id="score-board">Score: <span id="score">0</span> / <span id="total">0</span></div>
+    </div>
+
+    <div id="main-container">
+      <div id="map"></div>
+      <div id="sidebar">
+        <h3>Neighborhoods</h3>
+        <p class="instruction">Drag a neighborhood name onto its corresponding area on the map.</p>
+        <div id="bank"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VICTORY MODAL -->
+  <div id="victory-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎉 Outstanding!</h2>
+      <p id="modal-msg">You matched every neighborhood in this region!</p>
+      <div class="modal-actions">
+        <button id="retry-btn" class="action-btn">Play Again</button>
+        <button id="change-region-btn" class="action-btn secondary">Choose Another Region</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
